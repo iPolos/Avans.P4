@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Swiper.KlasB" x:Class="Swiper.KlasB.MainPage">
+    <Grid Padding="0,40"
+          x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1"
+              Padding="30">
+        </Grid>
+    </Grid>
+</ContentPage>
