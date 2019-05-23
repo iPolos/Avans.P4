@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1057937454703",
+    "firebase_url": "https://swiper-8e0bd.firebaseio.com",
+    "project_id": "swiper-8e0bd",
+    "storage_bucket": "swiper-8e0bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057937454703:android:a4e096a64c6bfc3f",
+        "android_client_info": {
+          "package_name": "com.avans.swiper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057937454703-kkq99p90jo7g058v40g51r6s01m7mmhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY0kRJ_Jxgk9vUK_bUUorkrDEhVTZO7-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057937454703-kkq99p90jo7g058v40g51r6s01m7mmhq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

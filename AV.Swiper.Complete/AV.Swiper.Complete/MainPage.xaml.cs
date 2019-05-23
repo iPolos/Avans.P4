@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AV.Swiper.Complete.Controls;
+using Plugin.LocalNotifications;
 using Xamarin.Forms;
 
 namespace AV.Swiper.Complete
@@ -30,6 +31,7 @@ namespace AV.Swiper.Complete
 
         private void Handle_OnLike(object sender, EventArgs e)
         {
+            CrossLocalNotifications.Current.Show("Ja!", "Super leuk dat je deze leuk vind man.");
             _likeCount++;
             InsertPhoto();
             UpdateGui();
@@ -37,6 +39,7 @@ namespace AV.Swiper.Complete
 
         private void Handle_OnDeny(object sender, EventArgs e)
         {
+            CrossLocalNotifications.Current.Show("Hmm!", "Wel jammer dat je deze niet leuk vind...");
             _denyCount++;
             InsertPhoto();
             UpdateGui();

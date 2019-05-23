@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using UserNotifications;
 
 namespace AV.Swiper.Complete.iOS
 {
@@ -22,6 +23,13 @@ namespace AV.Swiper.Complete.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            UNUserNotificationCenter.Current.RequestAuthorization(
+                    UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound,
+                    (approved, error) => { });
+
+            // Watch for notifications while app is active
+            UNUserNotificationCenter.Current.Delegate = new UserNotificationCenterDelegate();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
