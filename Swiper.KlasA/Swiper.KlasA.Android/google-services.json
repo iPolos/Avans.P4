@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "468170398455",
+    "firebase_url": "https://swiper-klas-a.firebaseio.com",
+    "project_id": "swiper-klas-a",
+    "storage_bucket": "swiper-klas-a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468170398455:android:a73a86fafa52ae3f",
+        "android_client_info": {
+          "package_name": "com.avans.swiper_klasa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468170398455-rlr09leb9chpus4bivhfrln8ntbn0oiq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIJby3jrYMsD6G1YxtxLOTzOKjkr65stY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468170398455-rlr09leb9chpus4bivhfrln8ntbn0oiq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
