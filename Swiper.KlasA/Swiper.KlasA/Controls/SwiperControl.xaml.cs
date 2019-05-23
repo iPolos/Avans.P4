@@ -7,6 +7,9 @@ namespace Swiper.KlasA.Controls
 {
     public partial class SwiperControl : ContentView
     {
+        public event EventHandler OnLike;
+        public event EventHandler OnDeny;
+
         private readonly double _initialRotation;
         private static readonly Random _random = new Random();
 
@@ -91,6 +94,14 @@ namespace Swiper.KlasA.Controls
 
         private void PanCompleted()
         {
+            if(CheckForExitCriteria())
+            {
+                Exit();
+            }
+
+            likeStackLayout.Opacity = 0;
+            denyStackLayout.Opacity = 0;
+
             photo.TranslateTo(0, 0, 250, Easing.SpringOut);
             photo.RotateTo(_initialRotation, 250, Easing.SpringOut);
             photo.ScaleTo(1, 250);
@@ -103,6 +114,36 @@ namespace Swiper.KlasA.Controls
             photo.Rotation = _initialRotation + (photo.TranslationX);
 
             CalculatePanState(e.TotalX);
+        }
+
+        private bool CheckForExitCriteria()
+        {
+            var halfScreenWidth = _screenWidth / 2;
+            var decisionBreakpoint = DeadZone * halfScreenWidth;
+
+            return (Math.Abs(photo.TranslationX) > decisionBreakpoint);
+        }
+
+        private void Exit()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var direction = photo.TranslationX < 0 ? -1 : 1;
+
+                if (direction > 0)
+                {
+                    OnDeny?.Invoke(this, new EventArgs());
+                } else
+                {
+                    OnLike?.Invoke(this, new EventArgs());
+                }
+
+                await photo.TranslateTo(photo.TranslationX + (_screenWidth * direction),
+                    photo.TranslationY, 200, Easing.CubicIn);
+
+                var parent = Parent as Layout<View>;
+                parent?.Children.Remove(this);
+            });
         }
 
         private void PanStarted()

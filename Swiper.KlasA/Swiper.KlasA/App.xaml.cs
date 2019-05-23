@@ -1,4 +1,8 @@
 ﻿using System;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +19,10 @@ namespace Swiper.KlasA
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            AppCenter.Start("android=1081ebbd-9270-46ca-9896-920ee30da411;" +
+                  "uwp={Your UWP App secret here};" +
+                  "ios={Your iOS App secret here}",
+                  typeof(Analytics), typeof(Crashes), typeof(Push));
         }
 
         protected override void OnSleep()
